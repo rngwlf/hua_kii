@@ -1,71 +1,68 @@
-
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Compiled and minified CSS -->
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	    <script src="https://kit.fontawesome.com/73179e287a.js"></script>
-		<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-	    
-
-	    <style>
-	    	#sampleFile {
-				width: 0.1px;
-				height: 0.1px;
-				opacity: 0;
-				overflow: hidden;
-				position: absolute;
-				visibility: hidden;
-				z-index: -1;
-			}
-			.inputfile + label {
-				cursor: pointer; /* "hand" cursor */
-			}
-	    </style>
-	</head>
-	<body>
-		<div class="container">
-			<span id="error" class="flow-text" style="display: none; color: red">error</span>
-	      	<div classs="col m12 l12 s12">
-	      		
-	      		<canvas id="canvas" >
-	      			<h2 id="hawaiian">words</h2>
-	      		</canvas>
-	      	</div>
-
-            <!-- UI uses forms to retrieve and recognize image -->
-	        <form ref='uploadForm' 
-				id='uploadForm' 
-				action='/image' 
-				method='post' 
-				encType="multipart/form-data">
-					<input type="file" name="sampleFile" id="sampleFile" />
-					
-			</form>	
-			<h2 id="hawaiian"></h2>
-			<h2 id="cheyenne"></h2>
-			<div class="row">
-				<!-- Button for user -->
-				<label id="picture" class="col m12 l12 s12 center-align waves-effect waves-light btn-large" for="sampleFile">
-					<i class="fas fa-camera"></i>
-				</label>
-			</div>
-	      </div>
-	
-
-		<!-- Compiled and minified JavaScript -->
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-        <!-- Import TensorFlow.js library -->
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js" type="text/javascript"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1"
+    />
+    <meta
+      name="description"
+      content="Hawaiian AI Object Detection"
+    />
+    <meta name="author" content="Michael Running Wolf, Noelani Arista, Caroline Running Wolf, Caleb Moses, and Joel Davison" />
+    <title>Hua Ki'i Mobile App</title>
     
-        <!-- Load the coco-ssd model -->
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script src="https://kit.fontawesome.com/73179e287a.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="vid_container">
+        <video id="video" autoplay playsinline></video>
+        <div id="video_overlay"></div>
+        <div id="huakiiImage">
+          <img src="img/huakii.png">
+        </div>
+        <div id="recognitionText" >loading...</div>
+        <div id="errorText" >Error</div>
+      </div>
+      <div id="gui_controls">
+        <button
+          id="switchCameraButton"
+          name="switch Camera"
+          type="button"
+          aria-pressed="false"
+        ></button>
+        <button id="takePhotoButton" name="take Photo" type="button"></button>
+        <button
+          id="toggleFullScreenButton"
+          name="toggle FullScreen"
+          type="button"
+          aria-pressed="false"
+        ></button>
+      </div>
+    </div>
 
-        <!-- Hua Ki'i base js code-->
-	    <script src="hua_kii.js"></script>
-	</body>
+    <!-- Camera Adapter Library -->
+    <script src="https://webrtc.github.io/adapter/adapter-7.7.0.js"></script>
+
+    <!-- Screenful for fullscreen support-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/5.1.0/screenfull.min.js"></script>
+
+    <!-- Howler for click sound -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.core.min.js"></script>
+
+    <!-- Jquery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Import TensorFlow.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js" type="text/javascript"></script>
+    
+    <!-- Load the coco-ssd model -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/hua_kii.js"></script>
+  </body>
 </html>
