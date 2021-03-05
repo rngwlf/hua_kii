@@ -5,7 +5,7 @@ Hua Ki'i static website version for ICLDC 2021
 
 Welcome to the Hua Ki'i AI Prototype App! This is a quick tutorial on how to get started on your very own AI application. There are two methods to create your own, an easy quick start method and a better more advanced method outlined below:
 
-## 1. Remix Hua Ki'i on Glitch.com
+## Easy: Remix Hua Ki'i on Glitch.com
 
 Read the instructions before going to the glitch version of the Hua Ki'i app.
 
@@ -20,7 +20,7 @@ Read the instructions before going to the glitch version of the Hua Ki'i app.
 
 ![Show In a New Window](docs/img/show_project.PNG?raw=true)
 
-## 2. Fork this project on Github.com
+## Hard: Fork this project on Github.com
 
 This is more advanced and I encourage you to read [Getting Started with Github](https://docs.github.com/en/github/getting-started-with-github).
 
