@@ -48,6 +48,27 @@ body {
   #huakiiImage img {
     width: 100%;
   }
+  #remix {
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    background: #ffffffba;
+  
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 4px;
+  }
+
+  #github {
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    
+  }
+  #github img{
+    width: 60px;
+  }
 
   #recognitionText, #errorText {
     position: absolute;
@@ -84,6 +105,8 @@ body {
     pointer-events: auto;
     z-index: 2;
   }
+
+  
   
   #takePhotoButton {
     left: calc(50% - 40px);
